@@ -29,7 +29,7 @@ jobs:
           path: dist
 
   deploy:
-    needs: builds
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
