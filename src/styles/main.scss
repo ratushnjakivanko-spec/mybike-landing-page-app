@@ -26,17 +26,31 @@ $gutter: 24px;
 
 // ── KEYFRAMES ──────────────────────────────────────────
 @keyframes hero-zoom {
-  from { transform: scale(1.04); }
-  to   { transform: scale(1); }
+  from {
+    transform: scale(1.04);
+  }
+
+  to {
+    transform: scale(1);
+  }
 }
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(32px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 // ── BASE ───────────────────────────────────────────────
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background: $bg;
@@ -53,9 +67,17 @@ body {
   margin: 0 auto;
   padding: 0 $margin;
 
-  @media (max-width: 1024px) { padding: 0 60px; }
-  @media (max-width: 744px)  { padding: 0 40px; }
-  @media (max-width: 480px)  { padding: 0 20px; }
+  @media (max-width: 1024px) {
+    padding: 0 60px;
+  }
+
+  @media (max-width: 744px) {
+    padding: 0 40px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 20px;
+  }
 }
 
 // ── HEADER ─────────────────────────────────────────────
@@ -78,9 +100,17 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    @media (max-width: 1024px) { padding: 0 60px; }
-    @media (max-width: 744px)  { padding: 0 40px; }
-    @media (max-width: 480px)  { padding: 0 20px; }
+    @media (max-width: 1024px) {
+      padding: 0 60px;
+    }
+
+    @media (max-width: 744px) {
+      padding: 0 40px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 20px;
+    }
   }
 
   &__right {
@@ -105,7 +135,9 @@ body {
   text-decoration: none;
   white-space: nowrap;
 
-  span { color: $accent; }
+  span {
+    color: $accent;
+  }
 }
 
 // ── ICON BUTTON ────────────────────────────────────────
@@ -122,7 +154,9 @@ body {
   transition: opacity 0.2s;
   text-decoration: none;
 
-  &:hover { opacity: 1; }
+  &:hover {
+    opacity: 1;
+  }
 
   svg {
     width: 20px;
@@ -131,8 +165,9 @@ body {
 
   &__tooltip {
     position: absolute;
-    bottom: calc(100% + 10px);
-    right: 0;
+    top: 50%;
+    right: calc(100% + 10px);
+    transform: translateY(-50%);
     white-space: nowrap;
     background: rgba(14, 14, 14, 0.95);
     border: 1px solid $border;
@@ -143,13 +178,11 @@ body {
     padding: 6px 12px;
     pointer-events: none;
     opacity: 0;
-    transform: translateY(4px);
-    transition: opacity 0.2s, transform 0.2s;
+    transition: opacity 0.2s;
   }
 
   &--phone:hover &__tooltip {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -172,9 +205,17 @@ body {
   }
 
   &.open {
-    span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    span:nth-child(2) { opacity: 0; }
-    span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+    }
   }
 }
 
@@ -210,7 +251,9 @@ body {
   display: flex;
   flex-direction: column;
 
-  &.open { transform: translateX(0); }
+  &.open {
+    transform: translateX(0);
+  }
 
   &__top {
     display: flex;
@@ -252,7 +295,9 @@ body {
     text-decoration: none;
     transition: color 0.2s;
 
-    &:hover { color: #111; }
+    &:hover {
+      color: #111;
+    }
   }
 
   &__cta {
@@ -287,7 +332,9 @@ body {
     padding: 6px 0;
     transition: color 0.2s;
 
-    &:hover { color: #555; }
+    &:hover {
+      color: #555;
+    }
   }
 }
 
@@ -345,7 +392,9 @@ body {
       color: $accent;
     }
 
-    @media (max-width: 600px) { font-size: 52px; }
+    @media (max-width: 600px) {
+      font-size: 52px;
+    }
   }
 }
 
@@ -353,14 +402,17 @@ body {
 .section {
   padding: 100px 0;
 
-  &--dark { background: $bg-alt; }
+  &--dark {
+    background: $bg-alt;
+  }
 
-  @media (max-width: 600px) { padding: 64px 0; }
-}
+  &--bikes {
+    padding-bottom: 140px;
+  }
 
-// bikes section needs more bottom padding so bg covers all cards
-#bikes {
-  padding-bottom: 140px;
+  @media (max-width: 600px) {
+    padding: 64px 0;
+  }
 }
 
 .section-label {
@@ -403,7 +455,9 @@ img {
     gap: 80px;
     align-items: center;
 
-    @media (max-width: 900px) { grid-template-columns: 1fr; }
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__heading {
@@ -425,7 +479,9 @@ img {
     aspect-ratio: 4 / 3;
     overflow: hidden;
 
-    &:hover img { transform: scale(1.04); }
+    &:hover img {
+      transform: scale(1.04);
+    }
   }
 }
 
@@ -435,8 +491,13 @@ img {
   grid-template-columns: repeat(3, 1fr);
   gap: $gutter;
 
-  @media (max-width: 900px) { grid-template-columns: 1fr 1fr; }
-  @media (max-width: 600px) { grid-template-columns: 1fr; }
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .bike-card {
@@ -458,7 +519,9 @@ img {
     margin-bottom: 24px;
     transition: filter 0.3s;
 
-    .bike-card:hover & { filter: brightness(1.1); }
+    .bike-card:hover & {
+      filter: brightness(1.1);
+    }
   }
 
   &__name {
@@ -495,7 +558,10 @@ img {
 
   &--reverse {
     direction: rtl;
-    > * { direction: ltr; }
+
+    > * {
+      direction: ltr;
+    }
   }
 
   &__images {
@@ -534,7 +600,10 @@ img {
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
-    &--reverse { direction: ltr; }
+
+    &--reverse {
+      direction: ltr;
+    }
   }
 }
 
@@ -568,7 +637,9 @@ img {
   flex-direction: column;
   gap: 12px;
 
-  &__textarea { min-height: 100px; }
+  &__textarea {
+    min-height: 100px;
+  }
 
   &__input,
   &__textarea {
@@ -584,8 +655,13 @@ img {
     resize: none;
     transition: border-color 0.2s;
 
-    &::placeholder { color: $text-muted; }
-    &:focus { border-color: $accent; }
+    &::placeholder {
+      color: $text-muted;
+    }
+
+    &:focus {
+      border-color: $accent;
+    }
 
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
@@ -627,7 +703,9 @@ img {
     gap: 80px;
     align-items: start;
 
-    @media (max-width: 900px) { grid-template-columns: 1fr; }
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__info {
@@ -652,7 +730,9 @@ img {
     text-decoration: none;
     display: block;
 
-    &:hover { color: $text; }
+    &:hover {
+      color: $text;
+    }
   }
 }
 
@@ -677,9 +757,17 @@ img {
     align-items: center;
     justify-content: space-between;
 
-    @media (max-width: 1024px) { padding: 0 60px; }
-    @media (max-width: 744px)  { padding: 0 40px; }
-    @media (max-width: 480px)  { padding: 0 20px; }
+    @media (max-width: 1024px) {
+      padding: 0 60px;
+    }
+
+    @media (max-width: 744px) {
+      padding: 0 40px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 20px;
+    }
   }
 
   &__logo {
